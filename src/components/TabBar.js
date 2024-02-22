@@ -1,12 +1,13 @@
 import { Text, } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Shopping from '@screens/Shopping';
-import Home from '@screens/Home';
+import Home from '@screens/home/Home';
 import Content from '@screens/Content';
 import Clip from '@screens/Clip';
 import { Ionicons } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
+import Icon from 'src/assets/icons/Icon';
 
 const Tab = createBottomTabNavigator();
 
@@ -19,35 +20,36 @@ export default function TabBar() {
         tabBarIcon: ({ focused, color, size }) => {
           if (route.name === 'Home') {
             if (focused) {
-              return <MaterialIcons name="home" size={size} color={color} />;
+              return <Icon name="home" size={size} color={color} />;
             }
-            return <MaterialCommunityIcons name="home-outline" size={size} color={color} />;
+            return <Icon name="homeOutline" size={size} color={color} />;
           }
           if (route.name === 'Shopping') {
             if (focused) {
-              return <MaterialCommunityIcons name="cart" size={size} color={color} />;
+              return <Icon name="shopping" size={size} color={color} />;
             }
-            return <MaterialCommunityIcons name="cart-outline" size={size} color={color} />;
+            return <Icon name="shoppingOutline" size={size} color={color} />;
           }
           if (route.name === 'Content') {
             if (focused) {
-              return <MaterialCommunityIcons name="file-document" size={size} color={color} />;
+              return <Icon name="content" size={size} color={color} />;
             }
-            return <MaterialCommunityIcons name="file-document-outline" size={size} color={color} />;
+            return <Icon name="contentOutline" size={size} color={color} />;
           }
           if (route.name === 'Clip') {
             if (focused) {
-              return <Ionicons name="play" size={size} color={color} />;
+              return <Icon name="clip" size={size} color={color} />;
             }
-            return <Ionicons name="play-outline" size={size} color={color} />;
+            return <Icon name="clipOutline" size={size} color={color} />;
           }
-          return <Ionicons name={'warning'} size={size} color={color} />;
+          return <Icon name="warning" size={size} color={color} />;
         },
         tabBarLabel: ({ focused, color }) => {
           return <Text style={{ color: color, textAlign: 'center' }}>{route.name}</Text>;
         },
         tabBarActiveTintColor: 'black',
         tabBarInactiveTintColor: 'black',
+        headerShown: false,
       })}
     >
       <Tab.Screen name="Shopping" component={Shopping} />
