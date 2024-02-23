@@ -40,6 +40,8 @@ export default function Icon(props) {
       return <MaterialIcons name='notifications-none' size={size} color={color} />
     case 'smile':
       return <FontAwesome6 name='smile-beam' size={size} color={color} />
+    case 'arrow-up':
+      return <Ionicons name='arrow-up' size={size} color={color} />
     default:
       return <Ionicons name='warning' size={size} color={color} />
   }
