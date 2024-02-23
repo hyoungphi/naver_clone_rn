@@ -1,7 +1,6 @@
-import { Button, View, StyleSheet } from "react-native";
-import { Ionicons, MaterialIcons } from "@expo/vector-icons";
-import IconButton from "src/components/IconButton";
-import Icon from "src/assets/icons/Icon";
+import { View, StyleSheet } from "react-native";
+import IconButton from "@components/IconButton";
+import Icon from "@assets/icons/Icon";
 
 export default function HomeHeader() {
   return (
