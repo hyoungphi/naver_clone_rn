@@ -32,6 +32,7 @@ function RightComponent() {
 
 const styles = StyleSheet.create({
   header: {
+    display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
     width: '100%',

@@ -1,4 +1,4 @@
-import { StyleSheet, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, TouchableOpacity, Pressable } from 'react-native';
 
 
 export default function IconButton({ icon, onPress, style }) {
@@ -8,9 +8,9 @@ export default function IconButton({ icon, onPress, style }) {
   }
 
   return (
-    <TouchableOpacity style={_style} onPress={onPress}>
+    <Pressable style={_style} onPress={onPress}>
       {icon}
-    </TouchableOpacity>
+    </Pressable>
   );
 }
 
