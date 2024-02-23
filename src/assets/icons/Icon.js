@@ -42,6 +42,10 @@ export default function Icon(props) {
       return <FontAwesome6 name='smile-beam' size={size} color={color} />
     case 'arrow-up':
       return <Ionicons name='arrow-up' size={size} color={color} />
+    case 'dust':
+      return <MaterialCommunityIcons name='dots-circle' size={size} color={color} />
+    case 'snow-rain':
+      return <MaterialCommunityIcons name='weather-snowy-rainy' size={size} color={color} />
     default:
       return <Ionicons name='warning' size={size} color={color} />
   }

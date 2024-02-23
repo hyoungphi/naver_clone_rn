@@ -4,6 +4,7 @@ import DefaultWrapper from '@components/DefaultWrapper';
 import HomeHeader from './components/HomeHeader';
 import Icon from '@assets/icons/Icon';
 import SearchBar from './components/SearchBar';
+import Weather from './components/Weather';
 
 const SHOW_HEADER_SCROLL_OFFSET = 10;
 const HEADER_ANIMATION_DURATION = 200;
@@ -74,8 +75,30 @@ export default function Home() {
                     if (index === 0) {
                         return <View style={styles.gap} />
                     }
+                    if (index === 1) {
+                        return <View style={styles.weather} >
+                            <Weather weatherData={
+                                [
+                                    {
+                                        title: '2.4',
+                                        titleColor: 'black',
+                                        discription: 'Colder than yesterday',
+                                        icon: <Icon name='snow-rain' size={24} />
+                                    },
+                                    {
+                                        title: '5 Good',
+                                        titleColor: 'blue',
+                                        discription: 'fine dust',
+                                        icon: <Icon name='dust' />
+                                    }
+                                ]
+                            }
+                            />
+                        </View>
+                    }
                     return <Text style={styles.dummy} key={index}>Dummy Data {index}</Text>
-                }}
+                }
+                }
                 keyExtractor={(item, index) => index.toString()}
             />
             <Animated.View style={{ top: searchBarTop, ...styles.searchBar }}>
@@ -112,6 +135,11 @@ const styles = StyleSheet.create({
         right: '1rem',
         backgroundColor: 'white',
         borderRadius: '50%',
+    },
+    weather: {
+        width: '100%',
+        alignItems: 'center',
+        height: '7rem',
     },
     dummy: {
         width: '90%',
